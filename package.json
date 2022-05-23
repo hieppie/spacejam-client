@@ -1,6 +1,6 @@
 {
   "homepage": "http://hieppie.github.io/spacejam-client",
-  "name": "Space Jam",
+  "name": "Space-Jam",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
