@@ -38,12 +38,14 @@ export const showTeam = (user, id) => {
 export const updateTeam = (team, user, id) => {
   return axios({
     method: 'PATCH',
-    url: apiUrl + '/surveys' + id,
+    url: apiUrl + '/teams/' + id,
     headers: {
       Authorization: `Bearer ${user.token}`
     },
     data: {
-      team: team.name
+      team: {
+        name: team.name
+      }
     }
   })
 }

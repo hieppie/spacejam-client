@@ -49,7 +49,7 @@ class Team extends Component {
       ))
     }
     let buttonJSX
-    if (team.owner === user.id) {
+    if (team.owner === user._id) {
       buttonJSX =
             <>
               <Button variant="primary" onCLick={this.deleteClick}>Delete Team</Button>
