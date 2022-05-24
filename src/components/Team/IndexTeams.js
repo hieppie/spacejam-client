@@ -82,7 +82,7 @@ class IndexTeams extends Component {
                 {teams.map(team => {
                   return <li id={team._id} key={team._id}><Link to={'/teams/' + team._id}>{team.name}</Link></li>
                 })}
-                <Button variant='primary' onClick={this.goback}>Back</Button>
+                <Button variant='primary' onClick={this.goBack}>Back</Button>
               </div>
             </div>
           )
