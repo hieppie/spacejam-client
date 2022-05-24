@@ -1,1 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
+$theme-colors: (
+    "primary": tomato,
+    "danger": rgb(255, 4, 242)
+);
+
+.navbar-brand {
+    margin-left: 2rem
+}
+
+.btn, .btn-primary {
+    margin-top: 10px;
+    margin-right: 10px;
+    // background-color: tomato !important;
+    // border-color: tomato;
+    box-shadow: 3px 4px rgb(235, 203, 203);
+    border: 10px 10px;
+}
