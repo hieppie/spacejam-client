@@ -22,6 +22,7 @@ class Team extends Component {
   }
 
   deleteClick = () => {
+    // console.log('delete button')
     const id = this.props.match.params.id
     const { user, history } = this.props
     deleteTeam(user, id)
@@ -44,23 +45,29 @@ class Team extends Component {
     if (team.players.length === 0) {
       playerJSX = 'Your team is empty. Please add players'
     } else {
-      playerJSX = team.players.map(player => (
-        <li key={player._id}>{player.name}</li>
+      playerJSX = team.players.map((player) => (
+        <div key={player._id}>
+          <li>{player.name}</li>
+          <p> points: {player.points}</p>
+          <p> assist: {player.assists}</p>
+          <p> rebounds:{player.rebounds}</p>
+        </div>
       ))
     }
     let buttonJSX
     if (team.owner === user._id) {
       buttonJSX =
             <>
-              <Button variant="primary" onCLick={this.deleteClick}>Delete Team</Button>
+              <Button variant="primary" onClick={this.deleteClick}>Delete Team</Button>
               <Button variant="primary" onClick={this.updateClick}>Update Team Name</Button>
+              {/* <Button variant="primary" onClick>Update Player</Button> */}
             </>
     }
     if (team.text === '') {
       return (
         <>
-          <h4>Team</h4>
-          <h5> All of Players</h5>
+          <h4>Team Name</h4>
+          <h5> Players</h5>
           <>{playerJSX}</>
           {buttonJSX}
         </>
@@ -68,9 +75,8 @@ class Team extends Component {
     }
     return (
       <>
-        <h4>Team</h4>
-        <h5>{this.state.team.name}</h5>
-        <h5>All the Players</h5>
+        <h4>Team Name: {this.state.team.name}</h4>
+        <h5>Players:</h5>
         <ul>{playerJSX}</ul>
         {buttonJSX}
       </>

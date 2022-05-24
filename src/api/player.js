@@ -1,7 +1,8 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
-export const createPlayer = (name, points, rebounds, assists, threeptm, steals, blocks, fgpct, ftpct, turnovers, teamId, user) => {
+export const createPlayer = (user, teamId, name, points, rebounds, assists) => {
+  // console.log(user)
   return axios({
     method: 'POST',
     url: apiUrl + '/players/',
@@ -14,12 +15,6 @@ export const createPlayer = (name, points, rebounds, assists, threeptm, steals, 
         points: points,
         rebounds: rebounds,
         assists: assists,
-        threeptm: threeptm,
-        steals: steals,
-        blocks: blocks,
-        fgpct: fgpct,
-        ftpct: ftpct,
-        turnovers: turnovers,
         teamId: teamId,
         owner: user._id
       }
@@ -27,7 +22,7 @@ export const createPlayer = (name, points, rebounds, assists, threeptm, steals, 
   })
 }
 
-export const updatePlayer = (name, points, rebounds, assists, threeptm, steals, blocks, fgpct, ftpct, turnovers, teamId, pId, user) => {
+export const updatePlayer = (user, teamId, pId, name, points, rebounds, assists) => {
   return axios({
     method: 'PATCH',
     url: apiUrl + '/players/' + pId,
@@ -40,12 +35,6 @@ export const updatePlayer = (name, points, rebounds, assists, threeptm, steals, 
         points: points,
         rebounds: rebounds,
         assists: assists,
-        threeptm: threeptm,
-        steals: steals,
-        blocks: blocks,
-        fgpct: fgpct,
-        ftpct: ftpct,
-        turnovers: turnovers,
         teamId: teamId,
         owner: user._id
       }

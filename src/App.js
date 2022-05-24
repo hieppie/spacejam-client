@@ -14,6 +14,7 @@ import CreateTeam from './components/Team/CreateTeam'
 import IndexTeams from './components/Team/IndexTeams'
 import Team from './components/Team/Team'
 import UpdateTeam from './components/Team/UpdateTeam'
+import EditPlayers from './components/Team/EditPlayers'
 
 class App extends Component {
   constructor (props) {
@@ -118,7 +119,14 @@ class App extends Component {
               <UpdateTeam msgAlert={this.msgAlert} user={user}/>
             )}
           />
-
+          <AuthenticatedRoute
+            exact
+            user={user}
+            path='/teams/:id/update/players'
+            render={() => (
+              <EditPlayers msgAlert={this.msgAlert} user={user}/>
+            )}
+          />
         </main>
       </Fragment>
     )

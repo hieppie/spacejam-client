@@ -55,7 +55,7 @@ export const deleteTeam = (user, id) => {
     method: 'DELETE',
     url: apiUrl + '/teams/' + id,
     headers: {
-      Authoriation: `Bearer ${user.token}`
+      Authorization: `Bearer ${user.token}`
     }
   })
 }

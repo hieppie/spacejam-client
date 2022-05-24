@@ -45,7 +45,7 @@ class IndexTeams extends Component {
         .then((res) => this.setState({ teams: res, show: true, owned: true }))
         .then(() =>
           msgAlert({
-            heading: 'Index Survey Success',
+            heading: 'Index Team Success',
             message: 'success',
             variant: 'success'
           })
