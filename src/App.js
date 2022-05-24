@@ -12,6 +12,7 @@ import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import CreateTeam from './components/Team/CreateTeam'
 import IndexTeams from './components/Team/IndexTeams'
+import Team from './components/Team/Team'
 
 class App extends Component {
   constructor (props) {
@@ -99,6 +100,14 @@ class App extends Component {
             user={user}
             path='/teams'
             render={() => <IndexTeams msgAlert={this.msgAlert} user={user} />}
+          />
+          <AuthenticatedRoute
+            exact
+            user={user}
+            path='/teams/:id'
+            render={() => (
+              <Team msgAlert={this.msgAlert} user = {user}/>
+            )}
           />
         </main>
       </Fragment>

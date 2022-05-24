@@ -30,7 +30,7 @@ export const showTeam = (user, id) => {
     method: 'GET',
     url: apiUrl + '/teams/' + id,
     headers: {
-      Authoriation: `Bearer ${user.token}`
+      Authorization: `Bearer ${user.token}`
     }
   })
 }
