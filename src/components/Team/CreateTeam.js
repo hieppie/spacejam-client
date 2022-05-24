@@ -32,7 +32,7 @@ class CreateTeam extends Component {
             variant: 'success'
           })
         )
-        .then(() => history.push('/teams' + this.state.id))
+        .then(() => history.push('/teams/' + this.state.id))
         .catch((error) => {
           msgAlert({
             heading: 'Error',
@@ -54,7 +54,7 @@ class CreateTeam extends Component {
                 <Form.Control
                   required
                   type='title'
-                  name='title'
+                  name='name'
                   value={name}
                   placeholder='Enter team name'
                   onChange={this.handleChange}

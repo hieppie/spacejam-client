@@ -15,6 +15,15 @@ export const createTeam = (team, user) => {
     }
   })
 }
+export const indexTeams = (user) => {
+  return axios({
+    method: 'GET',
+    url: apiUrl + '/teams/',
+    headers: {
+      Authorization: `Bearer ${user.token}`
+    }
+  })
+}
 
 export const showTeam = (user, id) => {
   return axios({
