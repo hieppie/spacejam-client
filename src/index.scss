@@ -1,11 +1,13 @@
-@import '~bootstrap/scss/bootstrap';
 $theme-colors: (
     "primary": tomato,
     "danger": rgb(255, 4, 242)
 );
+@import '~bootstrap/scss/bootstrap';
+
 
 .navbar-brand {
-    margin-left: 2rem
+    margin-left: 2rem;
+    color: tomato
 }
 
 .btn, .btn-primary {

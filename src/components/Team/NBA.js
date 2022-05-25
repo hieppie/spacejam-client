@@ -2,13 +2,19 @@ import React, { Component } from 'react'
 // import './App.css'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
+import { createPlayer } from '../../api/player'
+import { Button } from 'react-bootstrap'
+import Form from 'react-bootstrap/Form'
+import { showTeam } from '../../api/team'
 
 class NBA extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      playerName: null,
-      playerStats: {}
+      playerName: '',
+      players: [],
+      playerStats: {},
+      tId: ''
     }
   }
 
@@ -18,7 +24,28 @@ class NBA extends Component {
     // console.log(this.state.playerName)
   }
 
+  onSubmit= (event) => {
+    event.preventDefault()
+    const { user, history } = this.props
+    console.log(user)
+    // assigning variables to the state fields
+    const name = this.state.playerName
+    const points = this.state.playerStats.pts
+    const rebounds = this.state.playerStats.reb
+    const assists = this.state.playerStats.ast
+
+    // pushing the state tId, name, pts, rebs, assists to the database
+    createPlayer(user, this.state.tId, name, points, rebounds, assists)
+    // .then(() => this.onShowTeam())
+    // .then(() => this.setJSX())
+      .then(() => history.push('/teams/' + this.state.tId))
+      .catch(() => console.error)
+  }
+
   handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
     const replace = event.target.value.split(' ').join('_')
     if (replace.length > 0) {
       this.setState({ playerName: replace })
@@ -54,8 +81,16 @@ class NBA extends Component {
     }
 
     componentDidMount () {
-      this.getPlayerId()
-      this.getPlayerStats()
+      const id = this.props.match.params.id
+
+      const { user } = this.props
+
+      showTeam(user, id)
+      // put the response team and players inside of state. put the teamid, team name, players to this state.
+        .then((response) => this.setState({ tId: response.data.team._id, name: response.data.team.name, players: response.data.team.players }))
+        .catch(console.error)
+      // this.getPlayerId()
+      // this.getPlayerStats()
     }
 
     render () {
@@ -96,6 +131,9 @@ class NBA extends Component {
           <br />
           {/* position: {this.state.playerStats['player']['position']}
                   <br /> */}
+          <Form onSubmit={this.onSubmit}>
+            <Button variant='primary' type='submit'>Submit</Button>
+          </Form>
         </div>
       )
     }

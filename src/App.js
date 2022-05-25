@@ -125,15 +125,11 @@ class App extends Component {
             user={user}
             path='/teams/:id/update/players'
             render={() => (
-              <EditPlayers msgAlert={this.msgAlert} user={user}/>
-            )}
-          />
-          <AuthenticatedRoute
-            exact
-            user={user}
-            path='/nba'
-            render={() => (
-              <NBA msgAlert={this.msgAlert} user={user}/>
+              <>
+                <EditPlayers msgAlert={this.msgAlert} user={user}/>
+                <NBA msgAlert={this.msgAlert} user={user}/>
+              </>
+
             )}
           />
         </main>

@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { createPlayer, deletePlayer, updatePlayer } from '../../api/player'
 import { showTeam } from '../../api/team'
+// import NBA from './NBA'
 
 class EditPlayers extends Component {
   // _isMounted = false
@@ -54,7 +55,6 @@ class EditPlayers extends Component {
             ['player' + i + 'points']: points,
             ['player' + i + 'rebounds']: rebounds,
             ['player' + i + 'assists']: assists
-
           })
           console.log(this.state)
         }
@@ -268,6 +268,7 @@ class EditPlayers extends Component {
           {playerJSX}
           <Button variant='primary' type='submit'>Submit</Button>
         </Form>
+        {/* <NBA /> */}
       </>
     )
   }
