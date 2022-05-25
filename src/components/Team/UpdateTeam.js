@@ -66,7 +66,7 @@ class UpdateTeam extends Component {
             </Form>
           </div>
         </div>
-        <Button variant='primary' onClick={this.test}>Players</Button>
+        <Button variant='primary' onClick={this.test}>Add/Drop Players</Button>
       </>
     )
   }
