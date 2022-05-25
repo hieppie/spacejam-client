@@ -9,6 +9,7 @@ const authenticatedOptions = (
     <NavLink to='/new-team' className='nav-link'>Create Team</NavLink>
     <NavLink to='/teams' className='nav-link'>Teams</NavLink>
     <NavLink to='/sign-out' className='nav-link'>Sign Out</NavLink>
+    <NavLink to='/nba' className='nav-link'>Add NBA player</NavLink>
   </Fragment>
 )
 

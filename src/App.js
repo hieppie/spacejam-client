@@ -15,6 +15,7 @@ import IndexTeams from './components/Team/IndexTeams'
 import Team from './components/Team/Team'
 import UpdateTeam from './components/Team/UpdateTeam'
 import EditPlayers from './components/Team/EditPlayers'
+import NBA from './components/Team/NBA'
 
 class App extends Component {
   constructor (props) {
@@ -125,6 +126,14 @@ class App extends Component {
             path='/teams/:id/update/players'
             render={() => (
               <EditPlayers msgAlert={this.msgAlert} user={user}/>
+            )}
+          />
+          <AuthenticatedRoute
+            exact
+            user={user}
+            path='/nba'
+            render={() => (
+              <NBA msgAlert={this.msgAlert} user={user}/>
             )}
           />
         </main>
