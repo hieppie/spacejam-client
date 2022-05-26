@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
 import { createPlayer } from '../../api/player'
-import { Button } from 'react-bootstrap'
+import { Button, Table } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
 import { showTeam } from '../../api/team'
 
@@ -103,12 +103,44 @@ class NBA extends Component {
                 type='text'
                 value={this.state.value}
                 onChange={this.handleChange}
-                placeholder='Enter player name'
+                placeholder='First and Last name'
               />
             </Form>
-            <Button variant='primary' type='submit'>Submit</Button>
+            <Button variant='primary' type='submit'>Search Player</Button>
+            <Button variant='primary' type='submit'>Add to team</Button>
           </Form>
-          <br />
+          <br/>
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Points</th>
+                <th>Rebounds</th>
+                <th>Assists</th>
+                <th>3ptm</th>
+                <th>Steals</th>
+                <th>Blocks</th>
+                <th>FG%</th>
+                <th>FT%</th>
+                <th>Turnovers</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{this.state.playerName.replaceAll('_', ' ')}</td>
+                <td>{this.state.playerStats.pts}  </td>
+                <td>{this.state.playerStats.reb}</td>
+                <td>{this.state.playerStats.ast}</td>
+                <td>{this.state.playerStats.fg3m}</td>
+                <td>{this.state.playerStats.stl}</td>
+                <td>{this.state.playerStats.blk}</td>
+                <td>{this.state.playerStats.fg_pct}</td>
+                <td>{this.state.playerStats.ft_pct}</td>
+                <td>{this.state.playerStats.turnover}</td>
+              </tr>
+            </tbody>
+          </Table>
+          {/* <br />
                     Name: {this.state.playerName.replaceAll('_', ' ')}
           <br />
                   Points: {this.state.playerStats.pts}
@@ -128,11 +160,10 @@ class NBA extends Component {
                   FT%: {this.state.playerStats.ft_pct}
           <br />
                   Turnovers: {this.state.playerStats.turnover}
-          <br />
+          <br /> */}
           {/* position: {this.state.playerStats['player']['position']}
                   <br /> */}
           <Form onSubmit={this.onSubmit}>
-            <Button variant='primary' type='submit'>Submit</Button>
           </Form>
         </div>
       )

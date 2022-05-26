@@ -63,7 +63,7 @@ class Team extends Component {
                 <td>{player.rebounds}</td>
                 <td>{player.assists}</td>
               </tr>
-              <tr>
+              {/* <tr>
                 <td>2</td>
                 <td>Jacob</td>
                 <td>Thornton</td>
@@ -73,13 +73,13 @@ class Team extends Component {
                 <td>3</td>
                 <td colSpan={2}>Larry the Bird</td>
                 <td>@twitter</td>
-              </tr>
+              </tr> */}
             </tbody>
           </Table>
-          <p>{player.name.replaceAll('_', ' ')}</p>
+          {/* <p>{player.name.replaceAll('_', ' ')}</p>
           <p> points: {player.points}</p>
           <p> rebounds:{player.rebounds}</p>
-          <p> assist: {player.assists}</p>
+          <p> assist: {player.assists}</p> */}
         </div>
       ))
     }
@@ -104,10 +104,10 @@ class Team extends Component {
     }
     return (
       <>
-        <h4>{this.state.team.name}</h4>
-        <h5>Players stats per game</h5>
-        <ul>{playerJSX}</ul>
+        <h2>{this.state.team.name}</h2>
         {buttonJSX}
+        <h4>Players stats per game</h4>
+        <div>{playerJSX}</div>
       </>
     )
   }

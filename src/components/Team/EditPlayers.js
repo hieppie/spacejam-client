@@ -242,6 +242,7 @@ class EditPlayers extends Component {
             data-num={i}
             data-id={this.state['player' + i + 'key']}>Drop Player
           </Button>
+          <br/>
         </div>
       )
     }
@@ -264,6 +265,7 @@ class EditPlayers extends Component {
         <h4>{this.state.name}</h4>
         {/* <p>Team Name: {this.state.text}</p> */}
         <Button variant='primary' onClick={this.addPlayer}>Add a player</Button>
+        <br/>
         <Form onSubmit={this.onSubmit}>
           {playerJSX}
           <Button variant='primary' type='submit'>Submit</Button>

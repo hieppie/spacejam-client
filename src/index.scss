@@ -1,5 +1,4 @@
 
-
 $theme-colors: (
     "primary": rgb(71, 108, 255),
     "danger": rgb(255, 4, 242)
@@ -14,16 +13,19 @@ $theme-colors: (
 body {
     font-family: 'Lithos Black', Arial, Helvetica, sans-serif;
     min-height: 100%;
-    opacity: .8;
-    background: url("../src/Images/wallpaper.jpg") no-repeat center fixed;
+    opacity: 2;
+    background: no-repeat center fixed;
     background-size: cover;
     font-family: 'Poppins', sans-serif;
     background-color: #6bc4c9;
     color: white;
+    // box-shadow: 2px 2px 2px;
+    background-image: linear-gradient(rgba(150, 138, 79, 0.5), rgba(193, 173, 123, 0.476)), url("../src/Images/wallpaper.jpg");
 }
 
+
 a {
-    color: rgb(200, 255, 71);
+    color: hsl(78, 100%, 64%);
     text-decoration: none;
 }
 
@@ -31,13 +33,22 @@ a:hover {
     color: hotpink
 }
 
+th, td, tr {
+    color: white;
+    text-align: center;
+    border: 10px solid  hsl(78, 100%, 64%);
 
+}
+
+.navbar, .form-label {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
 
 
 .navbar-brand {
     margin-left: 2rem;
     color: tomato;
-
 }
 
 .btn, .btn-primary {
@@ -46,11 +57,31 @@ a:hover {
     // background-color: tomato !important;
     // border-color: tomato;
     box-shadow: 3px 4px rgb(235, 203, 203);
-    border: 10px 10px;
+    border: 10px 10px 10px 50px;
+    // display:flex;
+    justify-content:center;
+    // align-items: center;
+    color: white;
+    display: inline-block;
+    vertical-align: top;
+
 }
 
 #btnAllTeams,
 #btnYourTeams {
     display: inline-block;
     vertical-align: top;
+    color: white;
 }
+
+h2, h3, h4, h5 {
+    text-align: center;
+}
+
+h2 {
+    color:hsl(78, 100%, 64%)
+}
+
+td:empty::after{
+    content: "\00a0";
+  }
