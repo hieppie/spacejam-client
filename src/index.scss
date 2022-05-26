@@ -1,13 +1,43 @@
+
+
 $theme-colors: (
-    "primary": tomato,
+    "primary": rgb(71, 108, 255),
     "danger": rgb(255, 4, 242)
 );
 @import '~bootstrap/scss/bootstrap';
 
+@font-face {
+    font-family: 'Lithos Black';
+    src: url('Lithos\ Black\ Regular.ttf');
+}
+
+body {
+    font-family: 'Lithos Black', Arial, Helvetica, sans-serif;
+    min-height: 100%;
+    opacity: .8;
+    background: url("../src/Images/wallpaper.jpg") no-repeat center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    background-color: #6bc4c9;
+    color: white;
+}
+
+a {
+    color: rgb(200, 255, 71);
+    text-decoration: none;
+}
+
+a:hover {
+    color: hotpink
+}
+
+
+
 
 .navbar-brand {
     margin-left: 2rem;
-    color: tomato
+    color: tomato;
+
 }
 
 .btn, .btn-primary {
@@ -17,4 +47,10 @@ $theme-colors: (
     // border-color: tomato;
     box-shadow: 3px 4px rgb(235, 203, 203);
     border: 10px 10px;
+}
+
+#btnAllTeams,
+#btnYourTeams {
+    display: inline-block;
+    vertical-align: top;
 }

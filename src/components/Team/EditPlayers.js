@@ -178,7 +178,7 @@ class EditPlayers extends Component {
   addPlayer = () => {
     this.setState({
       amt: 1,
-      ['player' + 1]: '',
+      ['player' + 1]: ''.replaceAll('_', ' '),
       // error if : ''
       ['player' + 1 + 'key']: undefined,
       ['player' + 1 + 'points']: '',
@@ -198,7 +198,7 @@ class EditPlayers extends Component {
             <Form.Control
               required
               type='text'
-              // has to put || '' or else it will throw a uncontrolled error
+              // has to put || '' or else it will throw a uncontrolled error. googled
               value={this.state['player' + i] || ''}
               name={'player' + i}
               placeholder='Enter player Name'

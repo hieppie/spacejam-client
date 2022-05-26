@@ -96,20 +96,20 @@ class NBA extends Component {
     render () {
       return (
         <div className='App'>
-          <h3>NBA players stats per game</h3>
-          <form onSubmit={this.handleSubmit}>
-            <label>Player Name
+          <h3>Search NBA players stats per game</h3>
+          <Form onSubmit={this.handleSubmit}>
+            <Form>Player Name <br/>
               <input
                 type='text'
                 value={this.state.value}
                 onChange={this.handleChange}
                 placeholder='Enter player name'
               />
-            </label>
-            <input type='submit' value='Submit' />
-          </form>
+            </Form>
+            <Button variant='primary' type='submit'>Submit</Button>
+          </Form>
           <br />
-                    Name: {this.state.playerName}
+                    Name: {this.state.playerName.replaceAll('_', ' ')}
           <br />
                   Points: {this.state.playerStats.pts}
           <br />

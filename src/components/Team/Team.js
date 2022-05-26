@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { showTeam, deleteTeam } from '../../api/team'
-import { Button } from 'react-bootstrap'
+import { Button, Table } from 'react-bootstrap'
 
 class Team extends Component {
   constructor (props) {
@@ -47,7 +47,36 @@ class Team extends Component {
     } else {
       playerJSX = team.players.map((player) => (
         <div key={player._id}>
-          <li>{player.name}</li>
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Player Name</th>
+                <th>Points per Game</th>
+                <th>Rebounds per Game</th>
+                <th>Assists per Game</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{player.name.replaceAll('_', ' ')}</td>
+                <td>{player.points}</td>
+                <td>{player.rebounds}</td>
+                <td>{player.assists}</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td colSpan={2}>Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </Table>
+          <p>{player.name.replaceAll('_', ' ')}</p>
           <p> points: {player.points}</p>
           <p> rebounds:{player.rebounds}</p>
           <p> assist: {player.assists}</p>
@@ -75,7 +104,7 @@ class Team extends Component {
     }
     return (
       <>
-        <h4>Team Name: {this.state.team.name}</h4>
+        <h4>{this.state.team.name}</h4>
         <h5>Players stats per game</h5>
         <ul>{playerJSX}</ul>
         {buttonJSX}

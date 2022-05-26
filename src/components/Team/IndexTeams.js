@@ -80,7 +80,7 @@ class IndexTeams extends Component {
               <div className='col-sm-10 col-md-8 mx-auto mt-5'>
                 {nameJSX}
                 {teams.map(team => {
-                  return <li id={team._id} key={team._id}><Link to={'/teams/' + team._id}>{team.name}</Link></li>
+                  return <h4 className='teamName' id={team._id} key={team._id}><Link to={'/teams/' + team._id}>{team.name}</Link></h4>
                 })}
                 <Button variant='primary' onClick={this.goBack}>Back</Button>
               </div>
@@ -90,10 +90,12 @@ class IndexTeams extends Component {
       }
 
       return (
-        <>
-          <Button variant='primary' onClick={this.viewAllTeams}>View All Teams</Button> <br/>
-          <Button onClick={this.viewYourTeams}>View Your Teams</Button>
-        </>
+        <div className='row'>
+          <div className='btn-group' role='group'>
+            <Button id='btnAllTeams' variant='primary' onClick={this.viewAllTeams}>View All Teams</Button> <br/>
+            <Button id='btnYourTeams' onClick={this.viewYourTeams}>View Your Teams</Button>
+          </div>
+        </div>
       )
     }
 }
