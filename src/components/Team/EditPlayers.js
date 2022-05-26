@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { createPlayer, deletePlayer, updatePlayer } from '../../api/player'
 import { showTeam } from '../../api/team'
-// import NBA from './NBA'
+import NBA from './NBA'
 
 class EditPlayers extends Component {
   // _isMounted = false
@@ -12,6 +12,7 @@ class EditPlayers extends Component {
   constructor (props) {
     super(props)
     this.state = {
+      isCreate: false,
       name: '',
       tId: '',
       amt: 0,
@@ -177,6 +178,7 @@ class EditPlayers extends Component {
 
   addPlayer = () => {
     this.setState({
+      isCreate: true,
       amt: 1,
       ['player' + 1]: ''.replaceAll('_', ' '),
       // error if : ''
@@ -255,24 +257,31 @@ class EditPlayers extends Component {
   }
 
   render () {
+    const { user } = this.props
+
     const playerJSX = this.setJSX()
     const { name } = this.state
     if (name === '') {
       return 'Loading ...'
+    } else {
+      return (
+        <>
+          <h4>{this.state.name}</h4>
+          {/* <p>Team Name: {this.state.text}</p> */}
+          <Button variant='primary' onClick={this.addPlayer}>Create a player</Button>
+          <br/>
+          <Form onSubmit={this.onSubmit}>
+            {playerJSX}
+            {(this.state.players.length > 0 || this.state.isCreate) && (
+              <Button variant='primary' type='submit'>Submit</Button>
+            )}
+          </Form>
+          {this.state.isCreate &&
+          <NBA msgAlert={this.msgAlert} user={user}/>
+          }
+        </>
+      )
     }
-    return (
-      <>
-        <h4>{this.state.name}</h4>
-        {/* <p>Team Name: {this.state.text}</p> */}
-        <Button variant='primary' onClick={this.addPlayer}>Add a player</Button>
-        <br/>
-        <Form onSubmit={this.onSubmit}>
-          {playerJSX}
-          <Button variant='primary' type='submit'>Submit</Button>
-        </Form>
-        {/* <NBA /> */}
-      </>
-    )
   }
 }
 

@@ -52,7 +52,7 @@ class UpdateTeam extends Component {
             <h3>Update Team Name</h3>
             <Form onSubmit={this.onUpdateTeam}>
               <Form.Group controlId='title'>
-                <Form.Label>Name</Form.Label>
+                <Form.Label>New Team Name</Form.Label>
                 <Form.Control
                   required
                   type='title'
@@ -66,7 +66,7 @@ class UpdateTeam extends Component {
             </Form>
           </div>
         </div>
-        <Button variant='primary' onClick={this.test}>Add/Drop Players</Button>
+        <Button variant='primary' onClick={this.test}>Edit Roster</Button>
       </>
     )
   }

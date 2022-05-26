@@ -69,7 +69,7 @@ class IndexTeams extends Component {
       if (owned) {
         nameJSX = <h3> Your Teams</h3>
       } else {
-        nameJSX = <h3> All Teams</h3>
+        nameJSX = <h3> League Teams</h3>
       }
       if (show) {
         if (teams === null) {
@@ -82,7 +82,7 @@ class IndexTeams extends Component {
                 {teams.map(team => {
                   return <h4 className='teamName' id={team._id} key={team._id}><Link to={'/teams/' + team._id}>{team.name}</Link></h4>
                 })}
-                <Button variant='primary' onClick={this.goBack}>Back</Button>
+                <Button id='btnBack' variant='primary' onClick={this.goBack}>Back</Button>
               </div>
             </div>
           )

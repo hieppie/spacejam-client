@@ -35,6 +35,11 @@ class Team extends Component {
     history.push('/teams/' + this.props.match.params.id + '/update')
   }
 
+  addPlayers = () => {
+    const { history } = this.props
+    history.push('/teams/' + this.props.match.params.id + '/update/players')
+  }
+
   render () {
     const { team } = this.state
     const { user } = this.props
@@ -45,25 +50,26 @@ class Team extends Component {
     if (team.players.length === 0) {
       playerJSX = 'Your team is empty. Please add players'
     } else {
-      playerJSX = team.players.map((player) => (
-        <div key={player._id}>
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>Player Name</th>
-                <th>Points per Game</th>
-                <th>Rebounds per Game</th>
-                <th>Assists per Game</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
+      playerJSX = <div >
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Player Name</th>
+              <th>Points per Game</th>
+              <th>Rebounds per Game</th>
+              <th>Assists per Game</th>
+            </tr>
+          </thead>
+          <tbody>
+            {team.players.map((player) => (
+              <tr key={player._id}>
                 <td>{player.name.replaceAll('_', ' ')}</td>
                 <td>{player.points}</td>
                 <td>{player.rebounds}</td>
                 <td>{player.assists}</td>
               </tr>
-              {/* <tr>
+            ))}
+            {/* <tr>
                 <td>2</td>
                 <td>Jacob</td>
                 <td>Thornton</td>
@@ -74,14 +80,13 @@ class Team extends Component {
                 <td colSpan={2}>Larry the Bird</td>
                 <td>@twitter</td>
               </tr> */}
-            </tbody>
-          </Table>
-          {/* <p>{player.name.replaceAll('_', ' ')}</p>
+          </tbody>
+        </Table>
+        {/* <p>{player.name.replaceAll('_', ' ')}</p>
           <p> points: {player.points}</p>
           <p> rebounds:{player.rebounds}</p>
           <p> assist: {player.assists}</p> */}
-        </div>
-      ))
+      </div>
     }
     let buttonJSX
     if (team.owner === user._id) {
@@ -89,7 +94,7 @@ class Team extends Component {
             <>
               <Button variant="primary" onClick={this.deleteClick}>Delete Team</Button>
               <Button variant="primary" onClick={this.updateClick}>Edit Team</Button>
-              {/* <Button variant="primary" onClick>Update Player</Button> */}
+              <Button variant="primary" onClick={this.addPlayers}>Edit Roster</Button>
             </>
     }
     if (team.text === '') {

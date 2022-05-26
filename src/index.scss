@@ -1,17 +1,20 @@
 
 $theme-colors: (
-    "primary": rgb(72, 38, 240),
-    "danger": rgb(255, 4, 242)
+    "primary": rgb(97, 71, 226),
+    "danger": rgb(255, 4, 63)
 );
 @import '~bootstrap/scss/bootstrap';
 
+ h1, h2, h3, h4, h5, .navbar {
+     font-family:'Lithos Black', sans-serif; 
+ }
 @font-face {
-    font-family: 'Lithos Black';
-    src: url('Lithos\ Black\ Regular.ttf');
+    font-family: 'Lithograph';
+    src: url('./LITHOGRA.TTF');
 }
 
 body {
-    font-family: 'Lithos Black', Arial, Helvetica, sans-serif;
+    font-family: 'Acme', sans-serif;
     min-height: 100%;
     opacity: 1;
     background: no-repeat center fixed;
@@ -40,8 +43,12 @@ th, td, tr {
 
 }
 
-.navbar, .form-label {
+.navbar, .form-label, #btnSearch, #btnAddNba {
     margin-bottom: 20px;
+    // margin-top: 20px;
+}
+
+.form-label {
     margin-top: 20px;
 }
 
@@ -76,6 +83,7 @@ th, td, tr {
     font-size: 22px;
     border-radius: 6px;
     width: 10px;
+    text-align: center;
 }
 
 h2, h3, h4, h5 {
@@ -86,6 +94,7 @@ h2 {
     color:hsl(78, 100%, 64%)
 }
 
+// put this in so the table doesn't collapse if cells are empty
 td:empty::after{
     content: "\00a0";
   }

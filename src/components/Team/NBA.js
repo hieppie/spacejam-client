@@ -96,18 +96,18 @@ class NBA extends Component {
     render () {
       return (
         <div className='App'>
-          <h3>Search NBA players stats per game</h3>
+          <h3>Add NBA Players to your Roster</h3>
           <Form onSubmit={this.handleSubmit}>
-            <Form>Player Name <br/>
+            <div >Search Players Stats per Game <br/>
               <input
                 type='text'
                 value={this.state.value}
                 onChange={this.handleChange}
                 placeholder='First and Last name'
               />
-            </Form>
-            <Button variant='primary' type='submit'>Search Player</Button>
-            <Button variant='primary' type='submit'>Add to team</Button>
+            </div>
+            <Button variant='primary' type='submit'>Search</Button>
+            <Button variant='primary' type='submit'>Add to Roster</Button>
           </Form>
           <br/>
           <Table striped bordered hover>
