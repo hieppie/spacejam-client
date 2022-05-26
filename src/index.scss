@@ -1,6 +1,6 @@
 
 $theme-colors: (
-    "primary": rgb(71, 108, 255),
+    "primary": rgb(72, 38, 240),
     "danger": rgb(255, 4, 242)
 );
 @import '~bootstrap/scss/bootstrap';
@@ -13,7 +13,7 @@ $theme-colors: (
 body {
     font-family: 'Lithos Black', Arial, Helvetica, sans-serif;
     min-height: 100%;
-    opacity: 2;
+    opacity: 1;
     background: no-repeat center fixed;
     background-size: cover;
     font-family: 'Poppins', sans-serif;
@@ -57,7 +57,7 @@ th, td, tr {
     // background-color: tomato !important;
     // border-color: tomato;
     box-shadow: 3px 4px rgb(235, 203, 203);
-    border: 10px 10px 10px 50px;
+    border: 10px 10px;
     // display:flex;
     justify-content:center;
     // align-items: center;
@@ -72,6 +72,10 @@ th, td, tr {
     display: inline-block;
     vertical-align: top;
     color: white;
+    padding: 5px;
+    font-size: 22px;
+    border-radius: 6px;
+    width: 10px;
 }
 
 h2, h3, h4, h5 {

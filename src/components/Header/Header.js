@@ -8,8 +8,8 @@ const authenticatedOptions = (
     <NavLink to='/change-password' className='nav-link'>Change Password</NavLink>
     <NavLink to='/new-team' className='nav-link'>Create Team</NavLink>
     <NavLink to='/teams' className='nav-link'>Teams</NavLink>
-    <NavLink to='/sign-out' className='nav-link'>Sign Out</NavLink>
-    <NavLink to='/nba' className='nav-link'>Add NBA player</NavLink>
+    <NavLink to='/sign-out' className='nav-link "justify-content-end'>Sign Out</NavLink>
+    {/* <NavLink to='/nba' className='nav-link'>Add NBA player</NavLink> */}
   </Fragment>
 )
 
@@ -25,7 +25,6 @@ const alwaysOptions = (
     <NavLink exact to='/' className='nav-link'>Home</NavLink>
   </Fragment>
 )
-
 const Header = ({ user }) => (
   <Navbar bg='primary' variant='dark' expand='md'>
     <Navbar.Brand>

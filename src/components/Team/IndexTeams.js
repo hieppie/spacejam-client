@@ -93,7 +93,7 @@ class IndexTeams extends Component {
         <div className='row'>
           <div className='btn-group' role='group'>
             <Button id='btnAllTeams' variant='primary' onClick={this.viewAllTeams}>View All Teams</Button> <br/>
-            <Button id='btnYourTeams' onClick={this.viewYourTeams}>View Your Teams</Button>
+            <Button id='btnYourTeams' variant='primary' onClick={this.viewYourTeams}>View Your Teams</Button>
           </div>
         </div>
       )
