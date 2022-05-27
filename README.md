@@ -23,6 +23,15 @@ This is a fantasy basketball application that lets you use real NBA players and 
 ## WireFrames
 ![Image from iOS (1)](https://media.git.generalassemb.ly/user/42069/files/7e53f500-4779-409a-9f94-01fb472d67d0)
 
+## Plannings:
+- Read and understand the MVP
+- Brainstorm on ideas for the application
+- Lay out ERD and start designing the wireframes
+- Set up a schedule of tasks to do and when to complete then
+- Worked on the backend for the database
+- Worked on the front end to pull data from backend and make request to a 3rd party API.
+- Styled the app
+
 ## User stories: 
 - As an unregistered user, I would like to sign up with email and password.
 - As a registered user, I would like to sign in with email and password.
@@ -54,12 +63,3 @@ This is a fantasy basketball application that lets you use real NBA players and 
 ## Future Goals:
 - I would like to let the teams to play against each other with live scores.
 - I would like to make a random stats generator for creating fictional characters
-
-## Plannings:
-- Read and understand the MVP
-- Brainstorm on ideas for the application
-- Lay out ERD and start designing the wireframes
-- Set up a schedule of tasks to do and when to complete then
-- Worked on the backend for the database
-- Worked on the front end to pull data from backend and make request to a 3rd party API.
-- Styled the app
