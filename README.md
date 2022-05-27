@@ -1,6 +1,7 @@
 # Space Jam
 - [Space Jam](https://hieppie.github.io/spacejam-client/)
 - [Server Repository](https://github.com/hieppie/spacejam-server)
+- [Server Deployed](https://hidden-ocean-23581.herokuapp.com/)
 
 
 ## Installation 
