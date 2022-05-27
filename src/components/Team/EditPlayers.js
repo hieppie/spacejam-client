@@ -147,7 +147,7 @@ class EditPlayers extends Component {
       const pId = event.target.getAttribute('data-id')
       const { tId, amt } = this.state
       // console.log(this.state)
-      const { user } = this.props
+      const { user, history } = this.props
       // console.log(user)
       if (pId === null || pId === '') {
         for (let i = num; i < amt; i++) {
@@ -173,7 +173,9 @@ class EditPlayers extends Component {
           }
           this.setState({ amt: this.state.amt - 1, ['player' + amt]: undefined, ['player' + amt + 'key']: undefined })
         })
-        .then(() => this.setJSX())
+        .then(() => history.push('/teams/' + this.state.tId))
+
+        // .then(() => this.setJSX())
         .catch(() => console.error)
     }
 

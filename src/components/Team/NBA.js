@@ -50,6 +50,7 @@ class NBA extends Component {
     } else {
     //   alert('please type players name!')
     }
+    console.log(replace)
   }
 
     getPlayerId = () => {
@@ -72,7 +73,7 @@ class NBA extends Component {
 
     getPlayerStats = (playerId) => {
       axios.get(`https://www.balldontlie.io/api/v1/season_averages?season=2021&player_ids[]=${playerId}`)
-        .then(async (res) => {
+        .then((res) => {
           // console.log(res.data.data)
           this.setState({ playerStats: res.data.data[0] })
         })
