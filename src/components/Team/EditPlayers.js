@@ -26,10 +26,10 @@ class EditPlayers extends Component {
     const id = this.props.match.params.id
     // make the user this.props
     const { user } = this.props
-    console.log(this.state.players)
-    console.log(this.props)
-    console.log(user)
-    console.log(id)
+    // console.log(this.state.players)
+    // console.log(this.props)
+    // console.log(user)
+    // console.log(id)
     showTeam(user, id)
       // put the response team and players inside of state. put the teamid, team name, players to this state.
       .then((response) => this.setState({ tId: response.data.team._id, name: response.data.team.name, players: response.data.team.players }))
@@ -58,13 +58,13 @@ class EditPlayers extends Component {
             ['player' + i + 'rebounds']: rebounds,
             ['player' + i + 'assists']: assists
           })
-          console.log(this.state)
+          // console.log(this.state)
         }
       })
       .catch(console.error)
-    console.log(this.props)
-    console.log(this.state)
-    console.log(this.state.players)
+    // console.log(this.props)
+    // console.log(this.state)
+    // console.log(this.state.players)
   }
 
   // onShowTeam = () => {
@@ -101,10 +101,10 @@ class EditPlayers extends Component {
   onSubmit= (event) => {
     event.preventDefault()
 
-    // let iteration = 0
+    let iteration = 0
     for (let i = 1; i < this.state.amt + 1; i++) {
       const { user, history } = this.props
-      console.log(user)
+      // console.log(user)
       // assigning variables to the state fields
       const name = this.state['player' + i]
       const pId = this.state['player' + i + 'key']
@@ -122,33 +122,33 @@ class EditPlayers extends Component {
         updatePlayer(user, this.state.tId, pId, name, points, rebounds, assists)
           // .then(() => this.onShowTeam())
           // .then(() => this.setJSX())
-          .then(() => history.push('/teams/' + this.state.tId))
-          .catch(() => console.error)
+          // .then(() => history.push('/teams/' + this.state.tId))
+          // .catch(() => console.error)
           // put in iterations because it could not update all players in time. had to make sure all iterations run then .push
           // however without it, it will update multiple players but not show it in time. but only happen for the first time update.
           // after the first update every update after that is good
-        // .then(() => {
-        //   iteration++
-        //   if (iteration === this.state.amt) {
-        //     history.push('/teams/' + this.state.tId)
-        //   }
-        // })
-        // .catch(() => {
-        //   // iteration++
-        //   return console.error
-        // })
+          .then(() => {
+            iteration++
+            if (iteration === this.state.amt) {
+              history.push('/teams/' + this.state.tId)
+            }
+          })
+          .catch(() => {
+          // iteration++
+            return console.error
+          })
       }
     }
-    console.log(this.state)
+    // console.log(this.state)
   }
 
     deleteDynamic = (event) => {
       const num = event.target.getAttribute('data-num')
       const pId = event.target.getAttribute('data-id')
       const { tId, amt } = this.state
-      console.log(this.state)
+      // console.log(this.state)
       const { user } = this.props
-      console.log(user)
+      // console.log(user)
       if (pId === null || pId === '') {
         for (let i = num; i < amt; i++) {
           const r = parseInt(i) + 1

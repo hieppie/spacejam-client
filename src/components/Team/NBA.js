@@ -27,7 +27,7 @@ class NBA extends Component {
   onSubmit= (event) => {
     event.preventDefault()
     const { user, history } = this.props
-    console.log(user)
+    // console.log(user)
     // assigning variables to the state fields
     const name = this.state.playerName
     const points = this.state.playerStats.pts
@@ -73,7 +73,7 @@ class NBA extends Component {
     getPlayerStats = (playerId) => {
       axios.get(`https://www.balldontlie.io/api/v1/season_averages?season=2021&player_ids[]=${playerId}`)
         .then(async (res) => {
-          console.log(res.data.data)
+          // console.log(res.data.data)
           this.setState({ playerStats: res.data.data[0] })
         }).catch((err) => {
           console.log(err)
