@@ -66,7 +66,7 @@ class UpdateTeam extends Component {
             </Form>
           </div>
         </div>
-        <Button variant='primary' onClick={this.test}>Edit Roster</Button>
+        <Button variant='primary' onClick={this.test}>Edit Team Roster</Button>
       </>
     )
   }

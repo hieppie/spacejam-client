@@ -92,9 +92,9 @@ class Team extends Component {
     if (team.owner === user._id) {
       buttonJSX =
             <>
+              <Button variant="primary" onClick={this.addPlayers}>Edit Team Roster</Button>
+              <Button variant="primary" onClick={this.updateClick}>Update Team Name</Button>
               <Button variant="primary" onClick={this.deleteClick}>Delete Team</Button>
-              <Button variant="primary" onClick={this.updateClick}>Edit Team</Button>
-              <Button variant="primary" onClick={this.addPlayers}>Edit Roster</Button>
             </>
     }
     if (team.text === '') {

@@ -82,7 +82,7 @@ class IndexTeams extends Component {
                 {teams.map(team => {
                   return <h4 className='teamName' id={team._id} key={team._id}><Link to={'/teams/' + team._id}>{team.name}</Link></h4>
                 })}
-                <Button id='btnBack' variant='primary' onClick={this.goBack}>Back</Button>
+                <Button id='btnBack' variant='primary' onClick={this.goBack}>Back To Teams</Button>
               </div>
             </div>
           )
@@ -92,8 +92,8 @@ class IndexTeams extends Component {
       return (
         <div className='row'>
           <div className='btn-group' role='group'>
-            <Button id='btnAllTeams' variant='primary' onClick={this.viewAllTeams}>View All Teams</Button> <br/>
             <Button id='btnYourTeams' variant='primary' onClick={this.viewYourTeams}>View Your Teams</Button>
+            <Button id='btnAllTeams' variant='primary' onClick={this.viewAllTeams}>View League Teams</Button>
           </div>
         </div>
       )

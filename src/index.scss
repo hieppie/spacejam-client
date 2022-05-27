@@ -5,7 +5,7 @@ $theme-colors: (
 );
 @import '~bootstrap/scss/bootstrap';
 
- h1, h2, h3, h4, h5, .navbar {
+ h1, h2, h3, h4, h5, .navbar, * {
      font-family:'Lithos Black', sans-serif; 
  }
 @font-face {
@@ -13,8 +13,8 @@ $theme-colors: (
     src: url('./LITHOGRA.TTF');
 }
 
+
 body {
-    font-family: 'Acme', sans-serif;
     min-height: 100%;
     opacity: 1;
     background: no-repeat center fixed;
@@ -61,8 +61,7 @@ th, td, tr {
 .btn, .btn-primary {
     margin-top: 10px;
     margin-right: 10px;
-    // background-color: tomato !important;
-    // border-color: tomato;
+    margin-bottom: 10px;
     box-shadow: 3px 4px rgb(235, 203, 203);
     border: 10px 10px;
     // display:flex;
@@ -88,6 +87,7 @@ th, td, tr {
 
 h2, h3, h4, h5 {
     text-align: center;
+    margin-top: 10px;
 }
 
 h2 {

@@ -12,7 +12,8 @@ class EditPlayers extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      isCreate: false,
+      isCreated: false,
+      btnClicked: false,
       name: '',
       tId: '',
       amt: 0,
@@ -178,7 +179,8 @@ class EditPlayers extends Component {
 
   addPlayer = () => {
     this.setState({
-      isCreate: true,
+      isCreated: true,
+      btnClicked: true,
       amt: 1,
       ['player' + 1]: ''.replaceAll('_', ' '),
       // error if : ''
@@ -267,18 +269,20 @@ class EditPlayers extends Component {
       return (
         <>
           <h4>{this.state.name}</h4>
-          {/* <p>Team Name: {this.state.text}</p> */}
-          <Button variant='primary' onClick={this.addPlayer}>Create a player</Button>
+          {this.state.btnClicked === false &&
+          <Button variant='primary' onClick={this.addPlayer}>Create or Add NBA Player</Button>}
           <br/>
+          {/* set condition where nba api only shows up after Create or add NBA player is clicked */}
+          {this.state.isCreated &&
+          <NBA msgAlert={this.msgAlert} user={user}/>
+          }
           <Form onSubmit={this.onSubmit}>
             {playerJSX}
-            {(this.state.players.length > 0 || this.state.isCreate) && (
+            {(this.state.players.length > 0 || this.state.isCreated) && (
               <Button variant='primary' type='submit'>Submit</Button>
             )}
           </Form>
-          {this.state.isCreate &&
-          <NBA msgAlert={this.msgAlert} user={user}/>
-          }
+
         </>
       )
     }

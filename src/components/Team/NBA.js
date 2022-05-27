@@ -107,7 +107,7 @@ class NBA extends Component {
               />
             </div>
             <Button variant='primary' type='submit'>Search</Button>
-            <Button variant='primary' type='submit'>Add to Roster</Button>
+            <Button variant='primary' type='button' onClick={this.onSubmit}>Add to Roster</Button>
           </Form>
           <br/>
           <Table striped bordered hover>
