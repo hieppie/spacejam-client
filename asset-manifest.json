@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/spacejam-client/static/css/main.e83242e3.chunk.css",
-    "main.js": "/spacejam-client/static/js/main.79a8ba3f.chunk.js",
-    "main.js.map": "/spacejam-client/static/js/main.79a8ba3f.chunk.js.map",
+    "main.js": "/spacejam-client/static/js/main.8ff5e791.chunk.js",
+    "main.js.map": "/spacejam-client/static/js/main.8ff5e791.chunk.js.map",
     "runtime-main.js": "/spacejam-client/static/js/runtime-main.4cfd3211.js",
     "runtime-main.js.map": "/spacejam-client/static/js/runtime-main.4cfd3211.js.map",
-    "static/js/2.150ba4a2.chunk.js": "/spacejam-client/static/js/2.150ba4a2.chunk.js",
-    "static/js/2.150ba4a2.chunk.js.map": "/spacejam-client/static/js/2.150ba4a2.chunk.js.map",
+    "static/js/2.91c1c624.chunk.js": "/spacejam-client/static/js/2.91c1c624.chunk.js",
+    "static/js/2.91c1c624.chunk.js.map": "/spacejam-client/static/js/2.91c1c624.chunk.js.map",
     "index.html": "/spacejam-client/index.html",
     "static/css/main.e83242e3.chunk.css.map": "/spacejam-client/static/css/main.e83242e3.chunk.css.map",
-    "static/js/2.150ba4a2.chunk.js.LICENSE.txt": "/spacejam-client/static/js/2.150ba4a2.chunk.js.LICENSE.txt",
+    "static/js/2.91c1c624.chunk.js.LICENSE.txt": "/spacejam-client/static/js/2.91c1c624.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/spacejam-client/static/media/wallpaper.2540966b.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.4cfd3211.js",
-    "static/js/2.150ba4a2.chunk.js",
+    "static/js/2.91c1c624.chunk.js",
     "static/css/main.e83242e3.chunk.css",
-    "static/js/main.79a8ba3f.chunk.js"
+    "static/js/main.8ff5e791.chunk.js"
   ]
 }
