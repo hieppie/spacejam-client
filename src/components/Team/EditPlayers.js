@@ -239,13 +239,14 @@ class EditPlayers extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
+          {(this.state.btnClicked === false || this.state.isCreated === false) &&
           <Button
             variant='primary'
             type='button'
             onClick={this.deleteDynamic}
             data-num={i}
             data-id={this.state['player' + i + 'key']}>Drop Player
-          </Button>
+          </Button>}
           <br/>
         </div>
       )

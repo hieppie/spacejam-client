@@ -36,8 +36,6 @@ class NBA extends Component {
 
     // pushing the state tId, name, pts, rebs, assists to the database
     createPlayer(user, this.state.tId, name, points, rebounds, assists)
-    // .then(() => this.onShowTeam())
-    // .then(() => this.setJSX())
       .then(() => history.push('/teams/' + this.state.tId))
       .catch(() => console.error)
   }
@@ -56,18 +54,20 @@ class NBA extends Component {
 
     getPlayerId = () => {
       axios.get(`https://www.balldontlie.io/api/v1/players?search=${this.state.playerName}`)
-        .then(async res => {
+        .then(res => {
         // console.log(res.data.data)
           if (res.data.data[0] === undefined) {
             // alert('this player is either injured or hasn\'t played yet!')
           } else if (res.data.data.length > 1) {
             // alert('please specify the name more')
           } else {
-            await this.getPlayerStats(res.data.data[0].id)
+            this.getPlayerStats(res.data.data[0].id)
           }
-        }).catch(err => {
-          console.log(err)
         })
+        .catch(() => console.error)
+        // .catch(err => {
+        //   console.log(err)
+        // })
     }
 
     getPlayerStats = (playerId) => {
@@ -75,9 +75,11 @@ class NBA extends Component {
         .then(async (res) => {
           // console.log(res.data.data)
           this.setState({ playerStats: res.data.data[0] })
-        }).catch((err) => {
-          console.log(err)
         })
+        .catch(() => console.error)
+        // .catch((err) => {
+        //   console.log(err)
+        // })
     }
 
     componentDidMount () {
