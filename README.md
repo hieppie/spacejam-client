@@ -15,6 +15,9 @@ This is a fantasy basketball application that lets you use real NBA players and 
 
 ## ScreenShots:
 
+![Sign In](src/Images/sign-in.png)
+![Roster](src/Images/roster.png)
+![nba api](src/Images/nbaapi.png)
 
 ## ERD
 ![Image from iOS](https://media.git.generalassemb.ly/user/42069/files/0468c3a5-3700-485e-b65b-35f4d7bb0c66)
